@@ -1,4 +1,4 @@
-package qalificationRound.Indicium;
+package Round1A.problem4;
 
 
 import java.io.File;

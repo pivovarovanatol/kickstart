@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="2020"/>
 	<classpathentry kind="src" path="2019"/>
+	<classpathentry kind="src" path="CodeJam2020"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

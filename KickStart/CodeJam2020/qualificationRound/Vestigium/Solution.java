@@ -1,4 +1,4 @@
-package qalificationRound.Vestigium;
+package qualificationRound.Vestigium;
 
 
 import java.io.File;

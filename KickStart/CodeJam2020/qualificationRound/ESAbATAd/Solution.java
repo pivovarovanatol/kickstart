@@ -3,7 +3,7 @@
 // python interactive_runner.py python local_testing_tool.py 1 -- java qalificationRound.ESAbATAd.Solution
 // python interactive_runner.py python local_testing_tool.py 2 -- java qalificationRound.ESAbATAd.Solution
 
-package qalificationRound.ESAbATAd;
+package qualificationRound.ESAbATAd;
 
 
 import java.io.File;

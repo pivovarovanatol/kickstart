@@ -1,4 +1,4 @@
-package qalificationRound.NestingDepth;
+package qualificationRound.NestingDepth;
 
 
 import java.io.File;
