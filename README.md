@@ -1,2 +1,2 @@
 # kickstart
-My Google Kick Start participation
+My Google Contests participation (Kick Start, CodeJam etc)
