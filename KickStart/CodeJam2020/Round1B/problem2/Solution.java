@@ -6,14 +6,12 @@ package Round1B.problem2;
 //py interactive_runner.py python local_testing_tool.py 1 -- java -cp ./../../../bin Round1B.problem2.Solution
 //py interactive_runner.py python local_testing_tool.py 2 -- java -cp ./../../../bin Round1B.problem2.Solution
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-
 
 // Solved with binary search. Passed all 3 test cases. Didn't manage to finish within the contest time.
 public class Solution {
@@ -29,22 +27,22 @@ public class Solution {
 		map =  new HashMap<String, Boolean>();
 		// check first half-point
 		int x = maxX/2-1;
-		int y = 0;
+		int y = 1;
 		found = checkPoint(input, x, y);
 		
 		if (!found) {
 			// check second point
 			x = minX/2+1;
-			y = 0;
+			y = -1;
 			found = checkPoint(input, x, y);
 			if (!found) {
 				// check third point
-				x = 0;
+				x = 1;
 				y = minY/2+1;
 				found = checkPoint(input, x, y);
 				if (!found) {
 					// check fourth point
-					x = 0;
+					x = -1;
 					y = maxY/2-1;
 					found = checkPoint(input, x, y);
 				}
@@ -132,9 +130,9 @@ public class Solution {
 		int mid = (start+end)/2;
 		if (s && (start==mid)) return start;
 		boolean m = checkPoint(input, mid, y);
-		System.err.println("Checking RIGHT X range: " + start + " - " + end + " on " + y);
-		System.err.println("Point X start at: " + start + " is in circle? " + s + " count = " + count);
-		System.err.println("Point X mid at: " + mid + " is in circle? " + m + " count = " + count);
+//		System.err.println("Checking RIGHT X range: " + start + " - " + end + " on " + y);
+//		System.err.println("Point X start at: " + start + " is in circle? " + s + " count = " + count);
+//		System.err.println("Point X mid at: " + mid + " is in circle? " + m + " count = " + count);
 		if (m && (Math.abs(end-mid)==0)) return mid;
 		if (s && m) return bsXR(input, mid, end, y);
 		if (s && !m) return bsXR(input, start, mid-1, y);
@@ -150,9 +148,9 @@ public class Solution {
 		int mid = (start+end)/2;
 		if (e && (end==mid)) return end;
 		boolean m = checkPoint(input, mid, y);
-		System.err.println("Checking LEFT X range: " + start + " - " + end + " on " + y);
-		System.err.println("Point X start at: " + start + " is in circle? " + s + " count = " + count);
-		System.err.println("Point X mid at: " + mid + " is in circle? " + m + " count = " + count);
+//		System.err.println("Checking LEFT X range: " + start + " - " + end + " on " + y);
+//		System.err.println("Point X start at: " + start + " is in circle? " + s + " count = " + count);
+//		System.err.println("Point X mid at: " + mid + " is in circle? " + m + " count = " + count);
 		if (m && (Math.abs(end-mid)==0)) return mid;
 		if (e && m) return bsXL(input, start, mid, y);
 		if (e && !m) return bsXL(input, mid+1, end, y);
@@ -196,7 +194,7 @@ public class Solution {
 	}
 
 	
-	// check if X point and adjacent points are in the circle. Returns boolean[] for x-1, x, x+1 points
+	// check if X point are in the circle. Use HashMap for memmoizationto reduce the number of queries  
 	static boolean checkPoint(Scanner input, int x, int y) {
 		if (map.containsKey(x+"|"+y)) return map.get(x+"|"+y);
 		
